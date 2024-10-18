@@ -1,17 +1,17 @@
 name: PEP8 Code Style Check
 
-on: [push, pull_request]  # Ejecuta en cada push o PR
+on: [push, pull_request]
 
 jobs:
   lint:
-    runs-on: ubuntu-latest  # Máquina virtual para ejecutar el trabajo
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Actualizado a la versión v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5  # Actualizado a la versión v5
         with:
           python-version: '3.x'
 
