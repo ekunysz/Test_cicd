@@ -1,0 +1,22 @@
+name: PEP8 Code Style Check
+
+on: [push, pull_request]  # Ejecuta en cada push o PR
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  # Máquina virtual para ejecutar el trabajo
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Flake8 (PEP8 checker)
+        run: pip install flake8
+
+      - name: Run PEP8 style check
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
