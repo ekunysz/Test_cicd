@@ -20,7 +20,7 @@ def find_minimum(arr):
       if i<min_value:
            min_value = i
   return min_value
-
+#comento
 def find_maximum(arr):
     maxValue = arr[0]
     for i in arr:
